@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fafafa"/>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="styles.css">
+    <title>Fall Height Estimator</title>
+</head>
+<body>
+    <header>
+        <h1>Fall Height Estimator</h1>
+    </header>
+    <main>
+        <section id="input-section">
+            <label for="max-height">Enter Maximum Height (in meters):</label>
+            <input type="number" id="max-height" name="max-height" min="0">
+            <button id="start-measurement">Start Measurement</button>
+        </section>
+        <section id="output-section">
+            <h2>Estimated Fall Height</h2>
+            <p id="estimated-height">0</p>
+            <p id="acceleration">n/a</p>
+        </section>
+    </main>
+    <script src="app.js"></script>
+    <script src="sw.js"></script>
+</body>
+</html>
+</h2>
