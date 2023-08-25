@@ -56,17 +56,15 @@ function handleAccelerometer(event) {
       accelerometerData.z * accelerometerData.z
   );
 
-  // Check if the object is falling
-  if (totalAcceleration < gravity) {
-    isFalling = true;
-    velocity += totalAcceleration * deltaTime;
-    height += velocity * deltaTime;
-
+  if (totalAcceleration < gravity && accelerometerData.z < 0) {
     if (!isFalling && height > 0.2) {
       // If the object was not falling before and the height is more than 20cm
       fallingCount++; // Increment the falling count
       fallingCountOutput.textContent = `Falling count: ${fallingCount}`; // Update the UI
     }
+    isFalling = true;
+    velocity += totalAcceleration * deltaTime;
+    height += velocity * deltaTime;
   } else {
     if (isFalling && height > 0.2) {
       // If the object was falling and the height is more than 20cm
